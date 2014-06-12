@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Pangea Call Center Report</title>
+       
+        <h1>Leasing Dashboard</h1>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript">
+
+
+$(function () {
+
+
+    $(document).ready(function() {
+
+
+   
+    var chart = new Highcharts.Chart({
+       
+       
+        chart:{
+           
+            renderTo: 'container',
+            zoomType: 'x',
+           
+             events: {
+                   load: function() {
+   //let's make the xaxis start at 8
+   
+                       //chart.xAxis[0].setExtremes(0,5);
+                       // set up the updating of the chart each second
+                       var series = this.series[0];
+                       setInterval(function() {
+			
+                           chart.series[0].addPoint(Math.random()*50, Math.random()*12),
+                           chart.series[1].addPoint(Math.random()*100, Math.random()*12)
+                       }, 1000);
+                       
+                   }
+               }
+        },
+       
+        xAxis:{
+            min: 0,
+            max: 144,
+            tickInterval: 12,
+            categories:['8:00 AM',    '8:05 AM',    '8:10 AM',    '8:15 AM',    '8:20 AM',    '8:25 AM',    '8:30 AM',    '8:35 AM',    '8:40 AM',    '8:45 AM',    '8:50 AM',    '8:55 AM',    '9:00 AM',    '9:05 AM',    '9:10 AM',    '9:15 AM',    '9:20 AM',    '9:25 AM',    '9:30 AM',    '9:35 AM',    '9:40 AM',    '9:45 AM',    '9:50 AM',    '9:55 AM',    '10:00 AM',    '10:05 AM',    '10:10 AM',    '10:15 AM',    '10:20 AM',    '10:25 AM',    '10:30 AM',    '10:35 AM',    '10:40 AM',    '10:45 AM',    '10:50 AM',    '10:55 AM',    '11:00 AM',    '11:05 AM',    '11:10 AM',    '11:15 AM',    '11:20 AM',    '11:25 AM',    '11:30 AM',    '11:35 AM',    '11:40 AM',    '11:45 AM',    '11:50 AM',    '11:55 AM',    '12:00 PM',    '12:05 PM',    '12:10 PM',    '12:15 PM',    '12:20 PM',    '12:25 PM',    '12:30 PM',    '12:35 PM',    '12:40 PM',    '12:45 PM',    '12:50 PM',    '12:55 PM',    '1:00 PM',    '1:05 PM',    '1:10 PM',    '1:15 PM',    '1:20 PM',    '1:25 PM',    '1:30 PM',    '1:35 PM',    '1:40 PM',    '1:45 PM',    '1:50 PM',    '1:55 PM',    '2:00 PM',    '2:05 PM',    '2:10 PM',    '2:15 PM',    '2:20 PM',    '2:25 PM',    '2:30 PM',    '2:35 PM',    '2:40 PM',    '2:45 PM',    '2:50 PM',    '2:55 PM',    '3:00 PM',    '3:05 PM',    '3:10 PM',    '3:15 PM',    '3:20 PM',    '3:25 PM',    '3:30 PM',    '3:35 PM',    '3:40 PM',    '3:45 PM',    '3:50 PM',    '3:55 PM',    '4:00 PM',    '4:05 PM',    '4:10 PM',    '4:15 PM',    '4:20 PM',    '4:25 PM',    '4:30 PM',    '4:35 PM',    '4:40 PM',    '4:45 PM',    '4:50 PM',    '4:55 PM',    '5:00 PM',    '5:05 PM',    '5:10 PM',    '5:15 PM',    '5:20 PM',    '5:25 PM',    '5:30 PM',    '5:35 PM',    '5:40 PM',    '5:45 PM',    '5:50 PM',    '5:55 PM',    '6:00 PM',    '6:05 PM',    '6:10 PM',    '6:15 PM',    '6:20 PM',    '6:25 PM',    '6:30 PM',    '6:35 PM',    '6:40 PM',    '6:45 PM',    '6:50 PM',    '6:55 PM',    '7:00 PM',    '7:05 PM',    '7:10 PM',    '7:15 PM',    '7:20 PM',    '7:25 PM',    '7:30 PM',    '7:35 PM',    '7:40 PM',    '7:45 PM',    '7:50 PM',    '7:55 PM',    '8:00 PM']
+           
+        },
+        plotOptions:{
+           
+            series: {
+                groupPadding: true,
+                borderWidth: 0,
+                pointWidth: 10
+               
+                }
+        },
+       
+        series:[{
+           
+            type: 'column',
+            data:[0],
+            name: 'Total Incoming'
+                   
+        },
+        {
+           
+           
+            type: 'spline',
+            data: [0],
+            name: 'Percentage Answered',
+            lineWidth: 1
+           
+        }],
+        title:{
+            text: 'Overall Performance',
+            align: 'left',
+            x: 70
+        },
+        credits:{
+            enabled: false
+        }
+       
+       
+       
+       
+        })
+  });
+   
+});
+   
+        </script>
+    </head>
+    <body>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+    </body>
+</html>
+
+
+

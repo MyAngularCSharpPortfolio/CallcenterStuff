@@ -1,0 +1,20 @@
+<h1>Calls#new</h1>
+<p>Enter some new data</p>
+
+<%= form_for(@calls) do |f| %>
+
+
+<%= f.label :time %>
+<%= f.text_field :time %>
+
+<%= f.label :answeredCalls %>
+<%= f.number_field :answeredCalls %>
+
+
+<%= f.label :incomingCalls %>
+<%= f.number_field :incomingCalls %>
+
+
+
+<%= f.submit "Save" %>
+<% end %>
